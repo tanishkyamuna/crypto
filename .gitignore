@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backup files
+*.backup
+*-backup.*
+page-backup.tsx
+page-test.tsx
+page-with-layout.tsx
+
+# history and vscode
+.history/
+.vscode/
