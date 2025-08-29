@@ -6,7 +6,14 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build": "docker build -t cryptoquiver:latest .",
+    "docker:run": "docker run -p 3000:3000 cryptoquiver:latest",
+    "docker:compose": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "deploy": "./scripts/deploy.sh",
+    "monitor": "./scripts/monitor.sh"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
