@@ -148,12 +148,14 @@ export default function CoinDetailsPage() {
     
     localStorage.setItem('cryptoquiver_favorites', JSON.stringify(newFavorites));
     setIsFavorite(!isFavorite);
-    webApp?.HapticFeedback.selectionChanged();
+    // Telegram WebApp haptic feedback
+    webApp?.selectionFeedback();
   };
 
   const handlePeriodChange = (period: ChartPeriod) => {
     setSelectedPeriod(period);
-    webApp?.HapticFeedback.selectionChanged();
+    // Telegram WebApp haptic feedback
+    webApp?.selectionFeedback();
   };
 
   const renderTechnicalAnalysis = () => {
@@ -266,7 +268,7 @@ export default function CoinDetailsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-xs text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                onClick={() => webApp?.HapticFeedback.impactOccurred('light')}
+                onClick={() => webApp?.impactFeedback('light')}
               >
                 <LinkIcon className="h-3 w-3 mr-1" />
                 Read more

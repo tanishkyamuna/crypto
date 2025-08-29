@@ -1,12 +1,7 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* Safe Areas for Mobile */
 :root {
-  --safe-area-inset-top: env(safe-area-inset-top);
-  --safe-area-inset-right: env(safe-area-inset-right);
-  --safe-area-inset-bottom: env(safe-area-inset-bottom);
-  --safe-area-inset-left: env(safe-area-inset-left);
-
   /* Professional Color Palette */
   --primary-50: #f0f9ff;
   --primary-100: #e0f2fe;
@@ -99,52 +94,39 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  /* Mobile optimizations */
-  -webkit-overflow-scrolling: touch;
-  /* Safe area support */
-  padding-top: var(--safe-area-inset-top);
-  padding-left: var(--safe-area-inset-left);
-  padding-right: var(--safe-area-inset-right);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--surface);
-  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--neutral-300), var(--neutral-400));
-  border-radius: 4px;
-  border: 1px solid var(--surface);
+  background: var(--neutral-300);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--neutral-400), var(--neutral-500));
-}
-
-::-webkit-scrollbar-corner {
-  background: var(--surface);
+  background: var(--neutral-400);
 }
 
 /* Dark mode scrollbar */
 @media (prefers-color-scheme: dark) {
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--neutral-600), var(--neutral-700));
+    background: var(--neutral-600);
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--neutral-500), var(--neutral-600));
+    background: var(--neutral-500);
   }
 }
 
@@ -372,6 +354,96 @@ body {
   border-radius: 8px;
 }
 
+/* Custom Radio/Checkbox Styles */
+.radio-gradient {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neutral-300);
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-gradient:checked {
+  border-color: var(--primary-500);
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+}
+
+.radio-gradient:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.fab:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neutral-300), var(--neutral-400));
+  border-radius: 4px;
+  border: 1px solid var(--surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neutral-400), var(--neutral-500));
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--surface);
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--neutral-600), var(--neutral-700));
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--neutral-500), var(--neutral-600));
+  }
+}
+
 /* Mobile-specific enhancements */
 @media (max-width: 768px) {
   /* Enhanced touch targets */
@@ -389,6 +461,7 @@ body {
   /* Better tap highlighting */
   * {
     -webkit-tap-highlight-color: rgba(14, 165, 233, 0.1);
+    tap-highlight-color: rgba(14, 165, 233, 0.1);
   }
 }
 

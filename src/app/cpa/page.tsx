@@ -260,7 +260,7 @@ export default function CPAPage() {
 
   return (
     <AppLayout>
-      <div className="space-y-6">
+      <div className="space-y-6 w-full max-w-none">
         {/* Header */}
         <div className="text-center">
           <motion.div
@@ -284,23 +284,23 @@ export default function CPAPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">{totalEarned}</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">Days Earned</div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <div className="text-2xl font-bold text-purple-600 mb-2">{totalEarned}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">Days Earned</div>
           </div>
           
-          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 text-center">
-            <div className="text-3xl font-bold text-green-600 mb-2">
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <div className="text-2xl font-bold text-green-600 mb-2">
               {userProgress.filter(p => p.status === 'completed' || p.status === 'rewarded').length}
             </div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">Tasks Completed</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">Tasks Completed</div>
           </div>
           
-          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">{campaigns.length}</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">Available Tasks</div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <div className="text-2xl font-bold text-blue-600 mb-2">{campaigns.length}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">Available Tasks</div>
           </div>
         </motion.div>
 
@@ -309,49 +309,49 @@ export default function CPAPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900 rounded-lg p-6"
+          className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900 rounded-lg p-4 w-full overflow-hidden"
         >
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             How it Works
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="text-center">
-              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-white font-bold">1</span>
+              <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white font-bold text-sm">1</span>
               </div>
-              <h4 className="font-medium text-gray-900 dark:text-white mb-1">Choose Task</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-medium text-gray-900 dark:text-white mb-1 text-sm">Choose Task</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
                 Select a campaign that interests you
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-white font-bold">2</span>
+              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white font-bold text-sm">2</span>
               </div>
-              <h4 className="font-medium text-gray-900 dark:text-white mb-1">Complete Action</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-medium text-gray-900 dark:text-white mb-1 text-sm">Complete Action</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
                 Follow the instructions and complete the task
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-white font-bold">3</span>
+              <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white font-bold text-sm">3</span>
               </div>
-              <h4 className="font-medium text-gray-900 dark:text-white mb-1">Get Verified</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-medium text-gray-900 dark:text-white mb-1 text-sm">Get Verified</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
                 Wait for verification of your completion
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-white font-bold">4</span>
+              <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white font-bold text-sm">4</span>
               </div>
-              <h4 className="font-medium text-gray-900 dark:text-white mb-1">Claim Reward</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-medium text-gray-900 dark:text-white mb-1 text-sm">Claim Reward</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
                 Enjoy your free premium access
               </p>
             </div>
@@ -376,82 +376,76 @@ export default function CPAPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 hover:shadow-md transition-shadow w-full overflow-hidden"
               >
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                          <GiftIcon className="h-6 w-6 text-white" />
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                            {campaign.title}
-                          </h3>
-                          <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                            <span className="flex items-center">
-                              <CurrencyDollarIcon className="h-4 w-4 mr-1" />
-                              {campaign.reward_amount} days premium
-                            </span>
-                            <span className="flex items-center">
-                              <UsersIcon className="h-4 w-4 mr-1" />
-                              {campaign.current_participants}/{campaign.max_participants}
-                            </span>
-                            <span className="flex items-center">
-                              <CalendarDaysIcon className="h-4 w-4 mr-1" />
-                              Expires {formatTimeAgo(campaign.expires_at)}
-                            </span>
-                          </div>
-                        </div>
+                <div className="flex flex-col space-y-4">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center space-x-3 min-w-0 flex-1">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <GiftIcon className="h-5 w-5 text-white" />
                       </div>
                       
-                      {progress && (
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(progress.status)}`}>
-                          {getStatusIcon(progress.status)}
-                          <span className="ml-1 capitalize">{progress.status}</span>
-                        </span>
-                      )}
-                    </div>
-
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      {campaign.description}
-                    </p>
-
-                    <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 mb-4">
-                      <div className="text-sm">
-                        <div className="font-medium text-gray-900 dark:text-white mb-1">
-                          Requirements:
-                        </div>
-                        <div className="text-gray-600 dark:text-gray-400">
-                          {campaign.requirements.action}
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-base font-semibold text-gray-900 dark:text-white truncate">
+                          {campaign.title}
+                        </h3>
+                        <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mt-1">
+                          <span className="flex items-center">
+                            <CurrencyDollarIcon className="h-3 w-3 mr-1" />
+                            {campaign.reward_amount} days
+                          </span>
+                          <span className="flex items-center">
+                            <UsersIcon className="h-3 w-3 mr-1" />
+                            {campaign.current_participants}/{campaign.max_participants}
+                          </span>
                         </div>
                       </div>
                     </div>
+                    
+                    {progress && (
+                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium flex-shrink-0 ${getStatusColor(progress.status)}`}>
+                        {getStatusIcon(progress.status)}
+                        <span className="ml-1 capitalize">{progress.status}</span>
+                      </span>
+                    )}
+                  </div>
 
-                    {/* Progress Bar */}
-                    <div className="mb-4">
-                      <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-1">
-                        <span>Progress</span>
-                        <span>{campaign.current_participants}/{campaign.max_participants}</span>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    {campaign.description}
+                  </p>
+
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                    <div className="text-xs">
+                      <div className="font-medium text-gray-900 dark:text-white mb-1">
+                        Requirements:
                       </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                        <div
-                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all"
-                          style={{
-                            width: `${(campaign.current_participants / campaign.max_participants) * 100}%`
-                          }}
-                        />
+                      <div className="text-gray-600 dark:text-gray-400">
+                        {campaign.requirements.action}
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 lg:mt-0 lg:ml-6 flex flex-col space-y-2">
+                  {/* Progress Bar */}
+                  <div>
+                    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
+                      <span>Progress</span>
+                      <span>{campaign.current_participants}/{campaign.max_participants}</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                      <div
+                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full transition-all"
+                        style={{
+                          width: `${(campaign.current_participants / campaign.max_participants) * 100}%`
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col space-y-2">
                     {!progress && (
                       <button
                         onClick={() => handleStartCampaign(campaign)}
-                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all"
+                        className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all w-full"
                       >
                         Start Task
                         <ArrowTopRightOnSquareIcon className="h-4 w-4 ml-2" />
@@ -461,7 +455,7 @@ export default function CPAPage() {
                     {isPending && (
                       <button
                         onClick={() => handleStartCampaign(campaign)}
-                        className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                        className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors w-full"
                       >
                         Continue Task
                         <ArrowTopRightOnSquareIcon className="h-4 w-4 ml-2" />
@@ -471,7 +465,7 @@ export default function CPAPage() {
                     {canClaim && (
                       <button
                         onClick={() => handleClaimReward(campaign)}
-                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
+                        className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors w-full"
                       >
                         Claim Reward
                         <GiftIcon className="h-4 w-4 ml-2" />
@@ -479,7 +473,7 @@ export default function CPAPage() {
                     )}
 
                     {isCompleted && progress?.reward_claimed && (
-                      <div className="inline-flex items-center px-4 py-2 text-sm font-medium text-green-700 dark:text-green-300">
+                      <div className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-700 dark:text-green-300 w-full">
                         <CheckCircleIcon className="h-4 w-4 mr-2" />
                         Completed
                       </div>
